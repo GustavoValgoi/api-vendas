@@ -37,7 +37,7 @@ customersRouter.put(
       email: Joi.string().email().required(),
     },
     [Segments.PARAMS]: {
-      ID: Joi.string().uuid().required(),
+      id: Joi.string().uuid().required(),
     },
   }),
   customersController.update,
