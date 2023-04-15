@@ -6,12 +6,12 @@ class UserAvatarController {
   public async update(req: Request, res: Response): Promise<Response> {
     const updateAvatar = new UpdateUserAvatarService();
 
-    const user = updateAvatar.execute({
+    const user = await updateAvatar.execute({
       userId: req.user.id,
       avatarFileName: req.file.filename,
     });
 
-    return res.status(200).json(user);
+    return res.status(200).json(instanceToInstance(user));
   }
 }
 

@@ -32,6 +32,9 @@ class SERVERMail {
         user: process.env.SERVER_ACCESS_KEY,
         pass: process.env.SERVER_SECRET_ACCESS_KEY,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
 
     const { email, name } = mailConfig.defaults.from;
