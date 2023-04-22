@@ -1,0 +1,13 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 32768,
+  "username": "postgres",
+  "password": "pass",
+  "database": "api_vendas",
+  "entities": ["./dist/modules/**/typeorm/entities/*.js"],
+  "migrations": ["./dist/shared/typeorm/migrations/*.js"],
+  "cli": {
+    "migrationsDir": "./dist/shared/typeorm/migrations/"
+  }
+}

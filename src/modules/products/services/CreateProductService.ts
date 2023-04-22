@@ -2,7 +2,7 @@ import AppError from '@shared/errors/AppError';
 import Product from '../typeorm/entities/Product';
 import { getCustomRepository } from 'typeorm';
 import { ProductRepository } from '../typeorm/repositories/ProductsRepository';
-import RedisCache from '@shared/cache/RedisCache';
+import redisCache from '@shared/cache/RedisCache';
 
 interface IRequest {
   name: string;
@@ -19,7 +19,7 @@ class CreateProductService {
       throw new AppError('There is already product with this name.', 401);
     }
 
-    const redisCache = new RedisCache();
+    // const redisCache = new RedisCache();
 
     const product = productsRepository.create({ name, price, quantity });
 
