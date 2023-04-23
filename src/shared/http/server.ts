@@ -39,6 +39,6 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log('Server on port 3001');
+app.listen(process.env.APP_PORT, () => {
+  console.log('Server on port ' + process.env.APP_PORT);
 });
